@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saksham Kannojia — Full-Stack Engineer & Creative Technologist</title>
+  <meta name="description" content="Portfolio of Saksham Kannojia. Full-Stack Engineer, AI SaaS Builder, and Creative Visual Storyteller. Explore projects including CreatorFlow AI, Intellinses, and more.">
+  <meta name="keywords" content="Saksham Kannojia, Portfolio, Full-Stack Developer, AI Engineer, CreatorFlow AI, Next.js, TypeScript, Python">
+  <meta name="author" content="Saksham Kannojia">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Saksham Kannojia — Portfolio & Engineering Projects">
+  <meta property="og:description" content="Full-Stack Engineer & Creative Technologist building intelligent software, AI SaaS platforms, and digital experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/creatorflow.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Interactive Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="ambient-orb orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb orb-2" aria-hidden="true"></div>
+  <div class="ambient-orb orb-3" aria-hidden="true"></div>
+
+  <!-- Custom Cursor Glow -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" id="brand-logo">
+        <span class="logo-badge">SK</span>
+        <span class="logo-text">Saksham<span class="accent-dot">.dev</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#stack" class="nav-link">Tech Stack</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="terminal-toggle-btn" class="btn-ghost-sm" title="Toggle Interactive Developer Terminal">
+          <span class="terminal-icon">›_</span>
+          <span class="terminal-btn-text">Terminal</span>
+        </button>
+
+        <a href="https://github.com/SakshamKannojia" target="_blank" rel="noopener noreferrer" class="btn-primary-sm" id="nav-github-link">
+          <svg class="github-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <div class="status-pill" id="status-pill">
+            <span class="status-indicator"></span>
+            <span class="status-text">B.Tech CSE Undergrad • Exploring Prompt Engineering & AI</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Saksham Kannojia</span><br>
+            <span class="typewriter-prefix">Exploring</span> 
+            <span class="typewriter-text" id="typewriter"></span>
+            <span class="typewriter-cursor">|</span>
+          </h1>
+
+          <p class="hero-description">
+            B.Tech Computer Science & Engineering student passionate about generative AI and prompt engineering. I engineer structured LLM prompt workflows, full-stack web applications, and intuitive digital experiences with modern software architecture and cinematic visual polish.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-primary" id="hero-cta-projects">
+              <span>Explore Projects</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M12 4v14"/>
+              </svg>
+            </a>
+
+            <button class="btn-secondary" id="hero-copy-email-btn" data-email="skeditz1607@gmail.com">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Email</span>
+            </button>
+
+            <a href="https://github.com/SakshamKannojia" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="hero-github-btn">
+              <span>GitHub Profile ↗</span>
+            </a>
+          </div>
+
+          <div class="hero-social-strip">
+            <span class="strip-label">Direct Channels:</span>
+            <a href="mailto:skeditz1607@gmail.com" class="social-chip" title="Email Saksham">
+              <span class="chip-dot email-dot"></span> skeditz1607@gmail.com
+            </a>
+            <a href="https://instagram.com/skeditz.fx" target="_blank" rel="noopener noreferrer" class="social-chip" title="Creative Visuals Instagram">
+              <span class="chip-dot insta-dot"></span> @skeditz.fx
+            </a>
+            <a href="https://github.com/SakshamKannojia" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub">
+              <span class="chip-dot git-dot"></span> @SakshamKannojia
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase Card -->
+        <div class="hero-visual">
+          <div class="glass-card hero-glass-card" id="hero-card-3d">
+            <div class="card-glow-reflection"></div>
+            
+            <div class="card-header-bar">
+              <div class="traffic-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="card-path">~/saksham-kannojia/featured-release</div>
+              <span class="badge-live">LIVE</span>
+            </div>
+
+            <div class="hero-image-wrapper">
+              <img src="assets/creatorflow.jpg" alt="CreatorFlow AI Dashboard Preview" class="hero-showcase-img" id="hero-featured-image">
+              <div class="image-gradient-overlay"></div>
+              <div class="hero-badge-floating">
+                <span class="sparkle-icon">✨</span>
+                <div class="floating-badge-text">
+                  <strong>CreatorFlow AI</strong>
+                  <small>Full-Stack SaaS • Next.js 15 + Supabase</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-card-meta">
+              <div class="metric-item">
+                <span class="metric-value">12+</span>
+                <span class="metric-label">Repositories</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Production Focus</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-value">Multi</span>
+                <span class="metric-label">Disciplinary</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIVE STATS & HIGHLIGHTS BANNER -->
+    <section class="stats-banner">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper cyan-glow">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 class="stat-number">B.Tech CSE Student</h3>
+            <p class="stat-desc">Data Structures, Algorithms, System Architecture</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrapper purple-glow">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 class="stat-number">Prompt Engineering</h3>
+            <p class="stat-desc">Few-Shot, In-Context Tuning, Structured Schemas</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrapper emerald-glow">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 class="stat-number">Full-Stack Builder</h3>
+            <p class="stat-desc">Next.js 16, TypeScript, Supabase, Python</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrapper amber-glow">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 7l-7 5 7 5V7z"></path>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 class="stat-number">Visual Storyteller</h3>
+            <p class="stat-desc">Cinematic editing, visual FX & digital aesthetics</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-badge">ABOUT ME</div>
+        <h2 class="section-title">Where Computer Science Meets <span class="gradient-text">Prompt Engineering</span></h2>
+        
+        <div class="about-grid">
+          <div class="about-card glass-panel">
+            <div class="about-bio-header">
+              <img src="assets/avatar.jpg" alt="Saksham Kannojia Profile" class="about-avatar">
+              <div class="about-bio-meta">
+                <h3 class="about-name">Saksham Kannojia</h3>
+                <span class="about-role">B.Tech CSE Student • Prompt Engineer • Full-Stack Developer</span>
+                <span class="about-location">📍 India • B.Tech Computer Science & Engineering</span>
+              </div>
+            </div>
+
+            <p class="about-text">
+              I am a <strong>B.Tech Computer Science & Engineering student</strong> passionate about bridging theoretical computer science with modern artificial intelligence. My current technical obsession is <strong>Prompt Engineering</strong>—mastering systematic instruction design, few-shot in-context learning, role framing, and schema-constrained LLM output pipelines that make generative models reliable and deterministic.
+            </p>
+
+            <p class="about-text">
+              Alongside prompt engineering, I build production-grade web applications with Next.js, TypeScript, and Supabase PostgreSQL. This unique convergence of software engineering rigor, generative AI workflows, and cinematic visual storytelling (<a href="https://instagram.com/skeditz.fx" target="_blank" class="text-link">@skeditz.fx</a>) enables me to turn complex ideas into high-impact digital experiences.
+            </p>
+
+            <div class="about-highlights-list">
+              <div class="highlight-item">
+                <span class="highlight-bullet">✦</span>
+                <div>
+                  <strong>Prompt Engineering & LLM Architecture:</strong> Engineered CreatorFlow AI's dynamic prompt compiler, featuring few-shot linguistic profiling (Content DNA), Zod-verified JSON schema outputs, and multi-adapter rewriting pipelines using Gemini 1.5.
+                </div>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-bullet">✦</span>
+                <div>
+                  <strong>B.Tech Computer Science Foundations:</strong> Grounded in Data Structures & Algorithms, Object-Oriented Design, Database Management Systems, and Web Engineering principles.
+                </div>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-bullet">✦</span>
+                <div>
+                  <strong>Full-Stack & Creative Synergy:</strong> Hands-on implementation of React 18, Next.js App Router, Supabase Row-Level Security, and cinematic video editing with the Adobe Creative Suite.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Philosophy & Principles -->
+          <div class="about-sidebar">
+            <div class="glass-panel philosophy-card">
+              <h3 class="panel-subtitle">Core Principles</h3>
+              
+              <div class="principle-box">
+                <div class="principle-number">01</div>
+                <div>
+                  <h4>User-Centric Architecture</h4>
+                  <p>Software is only as good as the value and fluidity it delivers to the human on the other side.</p>
+                </div>
+              </div>
+
+              <div class="principle-box">
+                <div class="principle-number">02</div>
+                <div>
+                  <h4>Zero Compromise on Polish</h4>
+                  <p>Design and engineering aren't separate. Micro-interactions, responsiveness, and performance make good software memorable.</p>
+                </div>
+              </div>
+
+              <div class="principle-box">
+                <div class="principle-number">03</div>
+                <div>
+                  <h4>Continuous Exploration</h4>
+                  <p>Constantly learning new paradigms—from LLM prompt compilation and agentic patterns to modern web graphics.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel contact-quick-panel">
+              <h3 class="panel-subtitle">Let's Connect</h3>
+              <p>Looking for a talented builder for your team or project?</p>
+              <a href="#contact" class="btn-primary w-full">Start a Conversation →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header-row">
+          <div>
+            <div class="section-badge">PORTFOLIO & GITHUB</div>
+            <h2 class="section-title">Featured <span class="gradient-text">Projects & Systems</span></h2>
+            <p class="section-subtitle">Real-world production platforms, AI workspaces, and interactive tools built with modern codebases.</p>
+          </div>
+
+          <a href="https://github.com/SakshamKannojia?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-ghost view-all-github-btn">
+            <span>View All GitHub Repos (12) ↗</span>
+          </a>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-bar" id="project-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects <span class="count-badge">6</span></button>
+          <button class="filter-btn" data-filter="ai">AI & SaaS <span class="count-badge">2</span></button>
+          <button class="filter-btn" data-filter="web">Web & Frontend <span class="count-badge">2</span></button>
+          <button class="filter-btn" data-filter="python">Python & Tools <span class="count-badge">1</span></button>
+          <button class="filter-btn" data-filter="creative">Creative & FX <span class="count-badge">1</span></button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- PROJECT 1: CreatorFlow AI (Featured Flagship) -->
+          <article class="project-card featured-project" data-category="ai" id="project-creatorflow">
+            <div class="project-image-box">
+              <img src="assets/creatorflow.jpg" alt="CreatorFlow AI platform interface" class="project-img" loading="lazy">
+              <div class="project-badge-top">
+                <span class="badge-flagship">★ FLAGSHIP RELEASE</span>
+                <span class="badge-tag">Full-Stack SaaS</span>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn-preview-modal" onclick="openProjectModal('creatorflow')">
+                  <span>Inspect System Architecture</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="project-type">AI Workspace & Automation</span>
+                <span class="project-date">October 2026</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://github.com/SakshamKannojia/creatorflow-ai" target="_blank">CreatorFlow AI — Intelligent Content Workspace</a>
+              </h3>
+
+              <p class="project-description">
+                Comprehensive AI SaaS application built for modern content creators. Features custom linguistics profiling (Content DNA Engine), 1-click multi-adapter rewriting, scene-by-scene Reel script generation with camera directions and B-roll cues, and an interactive content calendar.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-chip">
+                  <span class="chip-icon">⚡</span> Next.js 16 App Router & Server Actions
+                </div>
+                <div class="highlight-chip">
+                  <span class="chip-icon">🤖</span> Google Gemini 1.5 Pro with JSON Schema
+                </div>
+                <div class="highlight-chip">
+                  <span class="chip-icon">🛡️</span> Supabase PostgreSQL with Strict RLS
+                </div>
+                <div class="highlight-chip">
+                  <span class="chip-icon">🎬</span> Reel Script Generator with Teleprompter
+                </div>
+              </div>
+
+              <div class="tech-tags">
+                <span class="tech-tag">Next.js 16</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Zod</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button class="btn-card-primary" onclick="openProjectModal('creatorflow')">
+                  <span>Deep Dive & Architecture</span>
+                </button>
+                <button class="btn-card-demo" onclick="openInteractiveDemo('creatorflow')">
+                  <span>Try Interactive Demo ⚡</span>
+                </button>
+                <a href="https://github.com/SakshamKannojia/creatorflow-ai" target="_blank" rel="noopener noreferrer" class="btn-card-icon" title="View Source on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Intellinses -->
+          <article class="project-card" data-category="ai" id="project-intellinses">
+            <div class="project-image-box">
+              <img src="assets/intellinses.jpg" alt="Intellinses Neural AI Landing Page" class="project-img" loading="lazy">
+              <div class="project-badge-top">
+                <span class="badge-tag">Interactive AI Experience</span>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn-preview-modal" onclick="openProjectModal('intellinses')">
+                  <span>Inspect Project</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="project-type">Frontend Engineering & Parallax</span>
+                <span class="project-date">May 2026</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://github.com/SakshamKannojia/Intellinses" target="_blank">Intellinses — Neural AI Platform & Interactive Parallax</a>
+              </h3>
+
+              <p class="project-description">
+                Cutting-edge cybernetic interface showcasing next-generation AI interfaces with multi-layer parallax scrolling, dynamic audio-visual aesthetic, responsive glassmorphism, and optimized Vite build pipeline.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">Parallax Scroll</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Modern UI</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button class="btn-card-primary" onclick="openProjectModal('intellinses')">
+                  <span>Inspect Details</span>
+                </button>
+                <a href="https://github.com/SakshamKannojia/Intellinses" target="_blank" rel="noopener noreferrer" class="btn-card-icon" title="View Source on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Real-Estate -->
+          <article class="project-card" data-category="web" id="project-realestate">
+            <div class="project-image-box">
+              <img src="assets/realestate.jpg" alt="Real Estate Discovery Portal" class="project-img" loading="lazy">
+              <div class="project-badge-top">
+                <span class="badge-tag">Architectural Portal</span>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn-preview-modal" onclick="openProjectModal('realestate')">
+                  <span>Inspect Project</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="project-type">Frontend Architecture & UI</span>
+                <span class="project-date">November 2025</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://github.com/SakshamKannojia/Real-Estate" target="_blank">Oakwood Residences — Architectural Property Portal</a>
+              </h3>
+
+              <p class="project-description">
+                High-end real estate web showcase built with custom CSS layout architecture, elegant typography, responsive property cards, interactive filters, and immersive visual storytelling.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Flexbox / Grid</span>
+                <span class="tech-tag">Montserrat Typography</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button class="btn-card-primary" onclick="openProjectModal('realestate')">
+                  <span>Inspect Details</span>
+                </button>
+                <a href="https://github.com/SakshamKannojia/Real-Estate" target="_blank" rel="noopener noreferrer" class="btn-card-icon" title="View Source on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Calorie Tracker CLI -->
+          <article class="project-card" data-category="python" id="project-calorie">
+            <div class="project-image-box terminal-preview-box">
+              <div class="code-banner">
+                <div class="code-banner-header">
+                  <span class="banner-circle red"></span>
+                  <span class="banner-circle yellow"></span>
+                  <span class="banner-circle green"></span>
+                  <span class="banner-filename">Calorie_tracker.py</span>
+                </div>
+                <pre class="code-banner-snippet"><code>def compute_nutrition():
+    total_calories = sum(calories)
+    avg_per_meal = total_calories / n
+    status = evaluate_diet(total)
+    return { "status": "OPTIMAL", "total": total }</code></pre>
+              </div>
+              <div class="project-badge-top">
+                <span class="badge-tag">Python CLI Engine</span>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn-preview-modal" onclick="openProjectModal('calorie')">
+                  <span>Inspect Project</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="project-type">Python Utilities & Analytics</span>
+                <span class="project-date">October 2025</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://github.com/SakshamKannojia/Calorie_tracker" target="_blank">Daily Calorie Tracker — Nutrition CLI Utility</a>
+              </h3>
+
+              <p class="project-description">
+                Interactive command-line nutritional management system built with Python. Tracks multiple meals, computes intake thresholds, calculates statistics, and alerts users to caloric imbalances with clean CLI formatting.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag">Python 3</span>
+                <span class="tech-tag">Data Structures</span>
+                <span class="tech-tag">CLI Engineering</span>
+                <span class="tech-tag">Calculations</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button class="btn-card-primary" onclick="openProjectModal('calorie')">
+                  <span>Inspect Details</span>
+                </button>
+                <button class="btn-card-demo" onclick="openInteractiveDemo('calorie')">
+                  <span>Run Live CLI ⚡</span>
+                </button>
+                <a href="https://github.com/SakshamKannojia/Calorie_tracker" target="_blank" rel="noopener noreferrer" class="btn-card-icon" title="View Source on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: Quiz Game -->
+          <article class="project-card" data-category="web" id="project-quiz">
+            <div class="project-image-box quiz-preview-box">
+              <div class="quiz-visual-banner">
+                <span class="quiz-icon-badge">🎯</span>
+                <span class="quiz-question-preview">"Interactive JS State Engine"</span>
+                <div class="quiz-options-mock">
+                  <div class="option-pill correct">✓ Real-time DOM Engine</div>
+                  <div class="option-pill">Timer & Scoring Loops</div>
+                </div>
+              </div>
+              <div class="project-badge-top">
+                <span class="badge-tag">Interactive JS Web App</span>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn-preview-modal" onclick="openProjectModal('quiz')">
+                  <span>Inspect Project</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="project-type">JavaScript & DOM State Engine</span>
+                <span class="project-date">December 2025</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://github.com/SakshamKannojia/Quiz-Game" target="_blank">Dynamic Quiz Engine — Real-Time Assessment App</a>
+              </h3>
+
+              <p class="project-description">
+                Interactive web assessment app with dynamic question loading, real-time score calculation, immediate response verification, and custom state management written in modern vanilla JavaScript.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">DOM API</span>
+                <span class="tech-tag">State Management</span>
+                <span class="tech-tag">CSS Animations</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button class="btn-card-primary" onclick="openProjectModal('quiz')">
+                  <span>Inspect Details</span>
+                </button>
+                <button class="btn-card-demo" onclick="openInteractiveDemo('quiz')">
+                  <span>Play Quiz Live 🎮</span>
+                </button>
+                <a href="https://github.com/SakshamKannojia/Quiz-Game" target="_blank" rel="noopener noreferrer" class="btn-card-icon" title="View Source on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 6: Visual FX & Storytelling -->
+          <article class="project-card" data-category="creative" id="project-creative">
+            <div class="project-image-box creative-preview-box">
+              <div class="creative-visual-banner">
+                <span class="creative-badge-glow">🎬 @skeditz.fx</span>
+                <span class="creative-subtitle">Cinematic Direction • Color Science • Editing</span>
+                <div class="creative-pills">
+                  <span>Premiere Pro</span>
+                  <span>After Effects</span>
+                  <span>Lightroom</span>
+                </div>
+              </div>
+              <div class="project-badge-top">
+                <span class="badge-tag">Visual Production</span>
+              </div>
+              <div class="project-hover-overlay">
+                <a href="https://instagram.com/skeditz.fx" target="_blank" rel="noopener noreferrer" class="btn-preview-modal">
+                  <span>Explore on Instagram ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="project-type">Creative Media & Visual Arts</span>
+                <span class="project-date">Ongoing Production</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://instagram.com/skeditz.fx" target="_blank">Visual Storytelling & Motion Design — @skeditz.fx</a>
+              </h3>
+
+              <p class="project-description">
+                Creative production brand focusing on cinematic video editing, pacing, color science, sound design, and motion graphics. Merging the analytical rigor of software engineering with high-impact visual aesthetics.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag">Adobe Premiere Pro</span>
+                <span class="tech-tag">After Effects</span>
+                <span class="tech-tag">Photoshop</span>
+                <span class="tech-tag">Lightroom</span>
+                <span class="tech-tag">Figma</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://instagram.com/skeditz.fx" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
+                  <span>View Creative Portfolio (@skeditz.fx) ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK & ARSENAL -->
+    <section class="section stack-section" id="stack">
+      <div class="container">
+        <div class="section-badge">SKILLS & TECHNOLOGIES</div>
+        <h2 class="section-title">Technical <span class="gradient-text">Arsenal & Tooling</span></h2>
+        <p class="section-subtitle">Languages, frameworks, databases, and creative suites used to deliver end-to-end digital solutions.</p>
+
+        <div class="stack-categories-grid">
+          
+          <!-- Category 1: Full-Stack & Core Languages -->
+          <div class="stack-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon-box cyan-bg">⚡</div>
+              <div>
+                <h3 class="category-title">Core Languages & CSE Foundations</h3>
+                <p class="category-subtitle">B.Tech academic rigor & modern typed codebases</p>
+              </div>
+            </div>
+
+            <div class="skills-pill-grid">
+              <div class="skill-pill" data-level="Expert">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-tag">Primary</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-tag">Modern</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Python</span>
+                <span class="skill-tag">AI & Scripts</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Data Structures (DSA)</span>
+                <span class="skill-tag">CSE Core</span>
+              </div>
+              <div class="skill-pill" data-level="Intermediate">
+                <span class="skill-name">Java</span>
+                <span class="skill-tag">OOP</span>
+              </div>
+              <div class="skill-pill" data-level="Intermediate">
+                <span class="skill-name">HTML5 & CSS3</span>
+                <span class="skill-tag">Layouts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Prompt Engineering & Generative AI -->
+          <div class="stack-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon-box purple-bg">🤖</div>
+              <div>
+                <h3 class="category-title">Prompt Engineering & GenAI</h3>
+                <p class="category-subtitle">System prompts, few-shot learning & LLM pipelines</p>
+              </div>
+            </div>
+
+            <div class="skills-pill-grid">
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Prompt Engineering</span>
+                <span class="skill-tag">Core Focus</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Few-Shot In-Context Learning</span>
+                <span class="skill-tag">Pattern Design</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Structured JSON Schemas</span>
+                <span class="skill-tag">Zod / Deterministic</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Google Gemini 1.5 API</span>
+                <span class="skill-tag">LLM Integration</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Next.js 16 & Server Actions</span>
+                <span class="skill-tag">Full-Stack</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">React 18</span>
+                <span class="skill-tag">UI Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Database, Cloud & DevOps -->
+          <div class="stack-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon-box emerald-bg">🗄️</div>
+              <div>
+                <h3 class="category-title">Cloud, Data & DevOps</h3>
+                <p class="category-subtitle">Security, serverless compute & persistence</p>
+              </div>
+            </div>
+
+            <div class="skills-pill-grid">
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Supabase</span>
+                <span class="skill-tag">PostgreSQL & RLS</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Firebase</span>
+                <span class="skill-tag">Auth / Realtime</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">MySQL</span>
+                <span class="skill-tag">Relational</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Vercel & Netlify</span>
+                <span class="skill-tag">CI/CD Deploy</span>
+              </div>
+              <div class="skill-pill" data-level="Intermediate">
+                <span class="skill-name">Cloudflare</span>
+                <span class="skill-tag">Edge & DNS</span>
+              </div>
+              <div class="skill-pill" data-level="Intermediate">
+                <span class="skill-name">Git & GitHub</span>
+                <span class="skill-tag">Version Control</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Creative Suite & Design -->
+          <div class="stack-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon-box amber-bg">🎨</div>
+              <div>
+                <h3 class="category-title">Creative Suite & Design</h3>
+                <p class="category-subtitle">Visual storytelling & UI/UX prototyping</p>
+              </div>
+            </div>
+
+            <div class="skills-pill-grid">
+              <div class="skill-pill" data-level="Expert">
+                <span class="skill-name">Adobe Premiere Pro</span>
+                <span class="skill-tag">Cinematic Video</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Adobe Photoshop</span>
+                <span class="skill-tag">Graphics</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Adobe Lightroom</span>
+                <span class="skill-tag">Color Grading</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Figma</span>
+                <span class="skill-tag">UI/UX Wireframes</span>
+              </div>
+              <div class="skill-pill" data-level="Advanced">
+                <span class="skill-name">Canva Pro</span>
+                <span class="skill-tag">Assets</span>
+              </div>
+              <div class="skill-pill" data-level="Intermediate">
+                <span class="skill-name">Arduino</span>
+                <span class="skill-tag">Hardware / IoT</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TERMINAL SECTION / DRAWER -->
+    <div id="interactive-terminal" class="terminal-overlay hidden">
+      <div class="terminal-window">
+        <div class="terminal-topbar">
+          <div class="terminal-dots">
+            <span class="terminal-dot term-red" onclick="closeTerminal()"></span>
+            <span class="terminal-dot term-yellow"></span>
+            <span class="terminal-dot term-green"></span>
+          </div>
+          <div class="terminal-title">saksham@macbook-pro: ~/portfolio (zsh)</div>
+          <button class="terminal-close-btn" onclick="closeTerminal()" title="Close Terminal">×</button>
+        </div>
+        <div class="terminal-body" id="terminal-output">
+          <div class="terminal-line"><span class="term-green">Welcome to Saksham's Interactive Developer Terminal v2.4</span></div>
+          <div class="terminal-line">Type <span class="term-cyan">'help'</span> to see available commands or click shortcuts below.</div>
+          <div class="terminal-shortcuts">
+            <button class="term-shortcut" onclick="runTermCommand('help')">help</button>
+            <button class="term-shortcut" onclick="runTermCommand('projects')">projects</button>
+            <button class="term-shortcut" onclick="runTermCommand('skills')">skills</button>
+            <button class="term-shortcut" onclick="runTermCommand('about')">about</button>
+            <button class="term-shortcut" onclick="runTermCommand('socials')">socials</button>
+            <button class="term-shortcut" onclick="runTermCommand('clear')">clear</button>
+          </div>
+        </div>
+        <div class="terminal-input-row">
+          <span class="term-prompt">saksham.dev ❯</span>
+          <input type="text" id="terminal-input" class="term-input" placeholder="Type a command (e.g. projects, skills, clear)..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-badge">GET IN TOUCH</div>
+        <h2 class="section-title">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
+        <p class="section-subtitle">Interested in collaborating on high-impact software, AI platforms, or creative digital productions? Drop me a line.</p>
+
+        <div class="contact-grid">
+          
+          <div class="contact-info-card glass-panel">
+            <h3 class="contact-heading">Contact Coordinates</h3>
+            <p class="contact-subtext">Feel free to reach out directly via email, connect on LinkedIn, or follow creative updates on Instagram.</p>
+
+            <div class="contact-links-list">
+              
+              <div class="contact-link-item">
+                <div class="contact-icon email-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-detail">
+                  <span class="contact-label">Direct Email</span>
+                  <a href="mailto:skeditz1607@gmail.com" class="contact-value">skeditz1607@gmail.com</a>
+                </div>
+                <button class="btn-copy-mini" onclick="copyToClipboard('skeditz1607@gmail.com')" title="Copy email address">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="contact-link-item">
+                <div class="contact-icon github-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </div>
+                <div class="contact-detail">
+                  <span class="contact-label">GitHub Repository Hub</span>
+                  <a href="https://github.com/SakshamKannojia" target="_blank" rel="noopener noreferrer" class="contact-value">github.com/SakshamKannojia</a>
+                </div>
+              </div>
+
+              <div class="contact-link-item">
+                <div class="contact-icon insta-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div class="contact-detail">
+                  <span class="contact-label">Creative Visuals</span>
+                  <a href="https://instagram.com/skeditz.fx" target="_blank" rel="noopener noreferrer" class="contact-value">instagram.com/skeditz.fx</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- GitHub Stats Card snippet -->
+            <div class="github-stats-card">
+              <div class="stats-header">
+                <span class="stat-tag">GitHub Highlights</span>
+                <span class="status-online">● Active Developer</span>
+              </div>
+              <div class="stats-quick-metrics">
+                <div>
+                  <strong>12</strong>
+                  <small>Repositories</small>
+                </div>
+                <div>
+                  <strong>Next.js / TS</strong>
+                  <small>Primary Stack</small>
+                </div>
+                <div>
+                  <strong>Gemini AI</strong>
+                  <small>Integrated</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-panel glass-panel">
+            <h3 class="contact-heading">Send a Direct Message</h3>
+            <p class="contact-subtext">Have a project in mind or want to talk tech? Send a message below.</p>
+
+            <form id="contact-form" class="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" name="name" required placeholder="e.g. Alex Rivera" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Your Email</label>
+                  <input type="email" id="contact-email" name="email" required placeholder="alex@domain.com" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Topic / Purpose</label>
+                <select id="contact-subject" name="subject" class="form-input select-input">
+                  <option value="Collaboration">Collaboration / Project</option>
+                  <option value="Hiring">Job Opportunity / Hiring</option>
+                  <option value="Freelance">Freelance Web / AI Development</option>
+                  <option value="Video Editing">Creative Video Editing & Visuals</option>
+                  <option value="General">General Inquiry / Tech Discussion</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="message" rows="5" required placeholder="Tell me about your idea, timeline, or questions..." class="form-input textarea-input"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full submit-btn" id="contact-submit-btn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="logo-badge">SK</span>
+        <span class="footer-brand-title">Saksham Kannojia</span>
+        <p class="footer-tagline">Crafting intelligent software and cinematic digital experiences.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/SakshamKannojia" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>© <span id="current-year">2026</span> Saksham Kannojia. Crafted with vanilla web standards & modern design.</p>
+        <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
+          ↑ Back to Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC PROJECT DETAILS MODAL -->
+  <div id="project-modal" class="modal-backdrop hidden" onclick="handleModalBackdropClick(event)">
+    <div class="modal-dialog glass-panel" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close Modal">×</button>
+      
+      <div id="modal-content-container">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE LIVE DEMO MODAL -->
+  <div id="demo-modal" class="modal-backdrop hidden" onclick="handleDemoBackdropClick(event)">
+    <div class="modal-dialog glass-panel demo-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="closeDemoModal()" aria-label="Close Demo">×</button>
+      
+      <div id="demo-content-container">
+        <!-- Interactive demo rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
